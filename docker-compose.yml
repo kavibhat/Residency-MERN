@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+
+  frontend:
+    build: ./frontend
+    container_name: hotel-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - hotel-net
+
+  backend:
+    build: ./backend
+    container_name: hotel-backend
+    ports:
+      - "5050:5050"
+    environment:
+      - PORT=5050
+      - MONGO_URI=mongodb://mongodb:27017/hoteldb
+    depends_on:
+      - mongodb
+    networks:
+      - hotel-net
+
+  mongodb:
+    image: mongo:6.0
+    container_name: hotel-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - hotel-net
+
+volumes:
+  mongo-data:
+
+networks:
+  hotel-net:
+    driver: bridge
