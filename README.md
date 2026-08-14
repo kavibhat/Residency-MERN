@@ -693,6 +693,6 @@ git push -u origin main
 
 ---
 
-**Bharathy K** — Cloud Engineering Portfolio 2026
-GitHub: [github.com/bharathyk2004](https://github.com/bharathyk2004)
+**Bharathy K**
+GitHub: [github.com/kavibhat](https://github.com/kavibhat)
 Docker Hub: [hub.docker.com/u/bharathyk2004](https://hub.docker.com/u/bharathyk2004)
